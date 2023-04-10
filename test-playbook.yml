@@ -6,4 +6,7 @@
   tasks:
 
   - name: Ping my servers
-    ping: 
+    ping:
+
+  - name: Run a script with arguments (free form)
+  ansible.builtin.script: /home/master/test/plane/test.sh
