@@ -8,5 +8,8 @@
   - name: Ping my servers
     ping:
 
+  - name: Add user to remote hosts
+    user: name=master groups=sudo shell=/bin/bash password=Ghjcnjgfhjkm
+
   - name: Run a script with arguments (free form)
     ansible.builtin.script: /home/master/test/plane/test.sh
