@@ -17,11 +17,11 @@ pipeline {
 //           {sh 'ansible playbook -i hosts.yml playbook.yml'}
 //        }
         stage("Build docker-compose") {
-            steps {echo " === Start docker-compose file ==="
-            dir ('jenkins-install-docker-compose-images') 
-            {sh 'docker compose build install-zabbix.yml '}
-
-            }
+            steps
+                {echo " === Start docker-compose file ==="
+                {sh 'git clone git@github.com:Braian959/jenkins-install-docker-compose-images.git'}
+                dir ('jenkins-install-docker-compose-images') {sh 'docker compose build install-zabbix.yml '}}
+        
         }
     }
 }
