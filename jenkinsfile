@@ -12,6 +12,11 @@ pipeline {
         timestamps()
     }
     stages {
+
+        stage ("ansible install progs")
+
+            {sh 'ansible playbook -i hosts.yml playbook.yml'}
+
         stage("Build docker-compose") {
             steps {echo " === Start docker-compose file ==="
             dir ('jenkins-install-docker-compose-images') {sh 'docker compose build . '}
