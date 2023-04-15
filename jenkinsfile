@@ -18,7 +18,9 @@ pipeline {
 //        }
         stage("Build docker-compose") {
             steps {echo " === Start docker-compose file ==="
-            dir ('jenkins-install-docker-compose-images') {sh 'docker compose build . '}
+            {git clone}
+            dir ('jenkins-install-docker-compose-images') 
+            {sh 'docker compose build install-zabbix.yml '}
 
             }
         }
