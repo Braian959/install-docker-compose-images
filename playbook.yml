@@ -9,4 +9,4 @@
     ping:
 
   - name: Run a script with arguments (free form)
-    ansible.builtin.script: /home/master/test/plane/test.sh
+    ansible.builtin.script: /ansible-install-programms/install-progs
